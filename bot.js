@@ -8,7 +8,7 @@ client.on('ready', () => {
 
 
 client.on('message', message => { 
-        var prefix = '-'; 
+        var prefix = '+'; 
 	var command = message.content.split(". ")[0];
 	if(command == prefix + 'bc') { 
 		if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You don`t have **MANAGE_MESSAGES** permission!");
@@ -18,7 +18,7 @@ client.on('message', message => {
 		if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You don`t have **MANAGE_MESSAGES** permission!");
 		
 		let bcSure = new Discord.RichEmbed()
-		.setTitle(`:mailbox_with_mail: **هل انت متاكد انك تريد ارسال الرسالة** ${message.guild.memberCount} **عضو**`)
+		.setTitle(`:mailbox_with_mail: ** هل انت متاكد انك تريد ارسال الرسالة  ** ${message.guild.memberCount} **عضو**`)
 		.setThumbnail(client.user.avatarURL)
 		.setColor('RANDOM')
 		.setDescription(`**\n:envelope: ➥ رسالتك**\n\n${args}`)
@@ -48,7 +48,7 @@ client.on('message', message => {
             // m.send(`[${m}]`);
             m.send(`${m}`,{embed: bc});
         });
-				message.channel.send(`:timer: ** تم الارسال** \`\`${message.guild.memberCount}\`\` **عضو**`).then(msg => msg.delete(5000));
+				message.channel.send(`:timer: ** تم الارسال ** \`\`${message.guild.memberCount}\`\` **عضو**`).then(msg => msg.delete(5000));
 				msg.delete();
 			})
 			dontSendBC.on('collect', r => {
